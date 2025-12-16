@@ -1,0 +1,16 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --safe: #16a34a;
+  --danger: #dc2626;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
