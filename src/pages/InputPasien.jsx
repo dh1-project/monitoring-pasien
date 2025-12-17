@@ -1,68 +1,81 @@
 import { useState } from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 
 function InputPasien({ onSubmit }) {
   const [jenis, setJenis] = useState("");
+  const [emr, setEmr] = useState("");
+  const [room, setRoom] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
 
-    const emr = e.target.emr.value.trim();
-    const room = e.target.room?.value.trim() || "";
+    if (!emr.trim()) {
+      setError("Nomor EMR wajib diisi");
+      return;
+    }
 
-    if (!emr) return;
+    if (jenis === "rawat-inap" && !room.trim()) {
+      setError("Room ID wajib diisi untuk rawat inap");
+      return;
+    }
 
     onSubmit({
-      emr,
+      emr: emr.trim(),
       jenis,
-      room, // boleh kosong
+      room: jenis === "rawat-inap" ? room.trim() : null,
     });
   };
 
- return (
-  <div className="app-container">
-    <Header />
+  return (
+    <div className="input-page">
+      <Header />
 
-    <div className="form-wrapper">
-      <form className="form-card" onSubmit={handleSubmit}>
-        <h3>Masukkan Data Pasien</h3>
-        <p className="form-desc">
-          Gunakan nomor rekam medis untuk mengakses informasi pasien
-        </p>
+      <div className="form-wrapper">
+        <form className="form-card" onSubmit={handleSubmit}>
+          <h3>Akses Informasi Pasien</h3>
+          <p className="form-desc">
+            Masukkan data untuk melihat ringkasan kondisi pasien
+          </p>
 
-        <select
-          name="jenis"
-          value={jenis}
-          onChange={(e) => setJenis(e.target.value)}
-          required
-        >
-          <option value="">Pilih Jenis Perawatan</option>
-          <option value="rawat-inap">Rawat Inap</option>
-          <option value="rawat-jalan">Rawat Jalan</option>
-        </select>
+          <select
+            value={jenis}
+            onChange={(e) => {
+              setJenis(e.target.value);
+              setRoom(""); // reset room saat ganti jenis
+            }}
+          >
+            <option value="">Pilih Jenis Perawatan</option>
+            <option value="rawat-inap">Rawat Inap</option>
+            <option value="rawat-jalan">Rawat Jalan</option>
+          </select>
 
-        {jenis === "rawat-inap" && (
+          {jenis === "rawat-inap" && (
+            <input
+              type="text"
+              placeholder="Room ID (wajib)"
+              value={room}
+              onChange={(e) => setRoom(e.target.value)}
+            />
+          )}
+
           <input
             type="text"
-            name="room"
-            placeholder="Room ID (opsional)"
+            placeholder="Nomor EMR Pasien"
+            value={emr}
+            onChange={(e) => setEmr(e.target.value)}
           />
-        )}
 
-        <input
-          type="text"
-          name="emr"
-          placeholder="Nomor EMR Pasien"
-          required
-        />
+          {error && <p className="form-error">{error}</p>}
 
-        <button type="submit">
-          Tampilkan Informasi Pasien
-        </button>
-      </form>
+          <button type="submit">
+            Lihat Informasi
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-);
+  );
 }
 
 export default InputPasien;
