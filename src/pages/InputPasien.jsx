@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 
-function InputPasien({ onSubmit }) {
+function InputPasien({ onSubmit, onBack }) {
   const [jenis, setJenis] = useState("");
   const [emr, setEmr] = useState("");
   const [room, setRoom] = useState("");
@@ -71,6 +71,13 @@ function InputPasien({ onSubmit }) {
 
           <button type="submit">
             Lihat Informasi
+          </button>
+          <button
+            type="button"
+            className="back-btn"
+            onClick={onBack}
+            >
+            ← Kembali
           </button>
         </form>
       </div>

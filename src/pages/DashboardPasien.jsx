@@ -42,18 +42,15 @@ function DashboardPasien({ data, onLogout }) {
   return (
     <div className="dashboard-page">
       <button className="logout-btn" onClick={onLogout}>
-        Keluar
+        Kembali
       </button>
 
-      <div className="dashboard-header">
-        <h2>Kondisi Pasien</h2>
-        <p>
-          EMR <strong>{emr}</strong>
-          {jenis === "rawat-inap" && room && (
-            <> · Ruang <strong>{room}</strong></>
-          )}
-        </p>
-      </div>
+    <div className="dashboard-header">
+      <h2>Kondisi Pasien</h2>
+      <p>
+        EMR <strong>{emr}</strong> · Ruang <strong>{room}</strong>
+      </p>
+    </div>
 
       {/* CARD RINGKAS */}
       <div className="dashboard-grid">

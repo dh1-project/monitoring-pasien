@@ -406,5 +406,222 @@ body {
   font-weight: 600;
   color: #374151;
 }
+/* ===============================
+   ROLE SELECTION PAGE
+================================ */
+.role-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f9fbfd, #eef4fa);
+}
+
+.role-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 28px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  text-align: center;
+}
+
+.role-card h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.role-desc {
+  margin: 8px 0 24px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.role-btn {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+
+  border-radius: 16px;
+  border: none;
+  background: #509ee3;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.role-btn.outline {
+  background: transparent;
+  color: #509ee3;
+  border: 2px solid #509ee3;
+}
+.back-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 14px;
+  border: 2px solid #509ee3;
+  background: transparent;
+
+  color: #509ee3;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+.dashboard-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-card.wide {
+  width: 90%;
+  max-width: 900px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #ff5c5c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.patient-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status.safe {
+  background: #2ecc71;
+  color: white;
+}
+
+.status.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.detail-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.detail-btn:hover {
+  background: #2563eb;
+}
+
+.nurse-card {
+  padding: 24px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+.nurse-header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.nurse-header p {
+  margin-top: 4px;
+  color: #64748b;
+}
+.table-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  padding: 12px 16px;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+.patient-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 14px 16px;
+  margin-top: 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+}
+
+.patient-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.1);
+}
+.row-danger {
+  border-left: 6px solid #ef4444;
+  background: rgba(254, 226, 226, 0.7);
+}
+.status-pill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.status-pill.safe {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pill.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
 
 
