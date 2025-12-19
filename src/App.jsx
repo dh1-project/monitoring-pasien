@@ -1,6 +1,10 @@
 import { useState } from "react";
+import RoleSelect from "./pages/RoleSelect";
 import InputPasien from "./pages/InputPasien";
+import LoginNurse from "./pages/LoginNurse";
 import DashboardPasien from "./pages/DashboardPasien";
+import DashboardNurse from "./pages/DashboardNurse";
+
 
 function App() {
   const [role, setRole] = useState(null);
