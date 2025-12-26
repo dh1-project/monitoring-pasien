@@ -69,25 +69,25 @@ export default function Alrm() {
     return () => clearTimeout(t);
   }, [latestAlarm, start, stop]);
 
-  return (
-    <div style={{ padding: 16 }}>
-      <h3>Alarm Monitoring</h3>
+  // return (
+  //   <div style={{ padding: 16 }}>
+  //     <h3>Alarm Monitoring</h3>
 
-      <h4 style={{ marginTop: 12 }}>Rooms</h4>
-      {Object.values(rooms).map((r) => (
-        <div key={r.room_id} style={{ border: "1px solid #444", padding: 10, borderRadius: 10, marginTop: 8 }}>
-          <div><b>{r.room_id}</b> • {r.status}</div>
-          <div>Alarm: <b>{r.alarm?.type || "NORMAL"}</b></div>
-        </div>
-      ))}
+  //     <h4 style={{ marginTop: 12 }}>Rooms</h4>
+  //     {Object.values(rooms).map((r) => (
+  //       <div key={r.room_id} style={{ border: "1px solid #444", padding: 10, borderRadius: 10, marginTop: 8 }}>
+  //         <div><b>{r.room_id}</b> • {r.status}</div>
+  //         <div>Alarm: <b>{r.alarm?.type || "NORMAL"}</b></div>
+  //       </div>
+  //     ))}
 
-      <h4 style={{ marginTop: 12 }}>Alarm Log</h4>
-      {alarms.map((a) => (
-        <div key={a.id} style={{ border: "1px solid #333", padding: 10, borderRadius: 10, marginTop: 8 }}>
-          <div><b>{a.type}</b> • {a.room_id} • <code>{a.ts}</code></div>
-          <div>{a.message}</div>
-        </div>
-      ))}
-    </div>
-  );
+  //     <h4 style={{ marginTop: 12 }}>Alarm Log</h4>
+  //     {alarms.map((a) => (
+  //       <div key={a.id} style={{ border: "1px solid #333", padding: 10, borderRadius: 10, marginTop: 8 }}>
+  //         <div><b>{a.type}</b> • {a.room_id} • <code>{a.ts}</code></div>
+  //         <div>{a.message}</div>
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 }
