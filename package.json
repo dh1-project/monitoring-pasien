@@ -11,6 +11,7 @@
     "tw-init": "tailwindcss init -p"
   },
   "dependencies": {
+    "mqtt": "^5.14.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "recharts": "^3.6.0"

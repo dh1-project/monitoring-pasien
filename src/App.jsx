@@ -4,7 +4,8 @@ import InputPasien from "./pages/InputPasien";
 import LoginNurse from "./pages/LoginNurse";
 import DashboardPasien from "./pages/DashboardPasien";
 import DashboardNurse from "./pages/DashboardNurse";
-
+import Alrm from "./alrm/alrm";
+import "./App.css";
 
 function App() {
   const [role, setRole] = useState(null);
@@ -48,13 +49,24 @@ function App() {
     );
   }
 
+  // if (role === "nurse" && nurseData && !selectedPasien) {
+  // return (
+  //   <DashboardNurse
+  //     nurseId={nurseData.nurseId}
+  //     onSelectPasien={(pasien) => setSelectedPasien(pasien)}
+  //     onLogout={() => setNurseData(null)}
+  //   />
+  // );
   if (role === "nurse" && nurseData && !selectedPasien) {
   return (
-    <DashboardNurse
-      nurseId={nurseData.nurseId}
-      onSelectPasien={(pasien) => setSelectedPasien(pasien)}
-      onLogout={() => setNurseData(null)}
-    />
+    <div style={{ display: "grid", gap: 16 }}>
+      <Alrm />   {/* ✅ Alarm monitoring jalan di sini */}
+      <DashboardNurse
+        nurseId={nurseData.nurseId}
+        onSelectPasien={(pasien) => setSelectedPasien(pasien)}
+        onLogout={() => setNurseData(null)}
+      />
+    </div>
   );
 }
   if (role === "nurse" && nurseData && selectedPasien) {
