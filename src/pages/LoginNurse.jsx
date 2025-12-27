@@ -1,13 +1,16 @@
 import { useState } from "react";
 
 function LoginNurse({ onSubmit, onBack }) {
-  const [nurseId, setNurseId] = useState("");
+  const [emrPerawat, setEmrPerawat] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!nurseId.trim()) return;
+    if (!emrPerawat.trim()) return;
 
-    onSubmit({ nurseId });
+    // ⬅️ KIRIM SESUAI METABASE
+    onSubmit({
+      emr_perawat: emrPerawat
+    });
   };
 
   return (
@@ -15,15 +18,15 @@ function LoginNurse({ onSubmit, onBack }) {
       <div className="form-card">
         <h3>Login Perawat</h3>
         <p className="form-desc">
-          Masukkan ID Perawat untuk mengakses data pasien
+          Masukkan EMR Perawat untuk mengakses dashboard
         </p>
 
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="ID Nurse"
-            value={nurseId}
-            onChange={(e) => setNurseId(e.target.value)}
+            placeholder="EMR Perawat"
+            value={emrPerawat}
+            onChange={(e) => setEmrPerawat(e.target.value)}
             required
           />
 

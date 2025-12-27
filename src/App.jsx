@@ -52,7 +52,7 @@ function App() {
   // if (role === "nurse" && nurseData && !selectedPasien) {
   // return (
   //   <DashboardNurse
-  //     nurseId={nurseData.nurseId}
+  //     emrPerawat={nurseData.emr_perawat}
   //     onSelectPasien={(pasien) => setSelectedPasien(pasien)}
   //     onLogout={() => setNurseData(null)}
   //   />
@@ -62,7 +62,7 @@ function App() {
     <div style={{ display: "grid", gap: 16 }}>
       <Alrm />   {/* ✅ Alarm monitoring jalan di sini */}
       <DashboardNurse
-        nurseId={nurseData.nurseId}
+        emrPerawat={nurseData.emr_perawat}
         onSelectPasien={(pasien) => setSelectedPasien(pasien)}
         onLogout={() => setNurseData(null)}
       />
